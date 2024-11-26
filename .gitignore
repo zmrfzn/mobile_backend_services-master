@@ -31,3 +31,7 @@ yarn-error.log
 
 newrelic_agent.log
 **/newrelic_agent.log
+
+
+*.log
+**/logs**
