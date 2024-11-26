@@ -10,7 +10,7 @@ exports.config = {
   /**
    * Array of application names.
    */
-  app_name: ['MobileAPIFirst(Non-Prod)'],
+  app_name: process.env.NEWRELIC_APP_NAME,
   /**
    * Your New Relic license key.
    */
