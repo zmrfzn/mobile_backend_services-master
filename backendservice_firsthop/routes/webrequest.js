@@ -36,7 +36,7 @@ const webrequest = (app, fs) => {
         console.log(req.headers);
 
         //change this ip address to point to your Macs IP address. You made need to regularly update based on your Mac IP
-        http.get('http://192.168.1.6:3002/users', (resp) => {
+        http.get(`${SECOND_HOP_IP}/users`, (resp) => {
         let data = '';
 
         // A chunk of data has been recieved.
