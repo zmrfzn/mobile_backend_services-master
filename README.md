@@ -41,15 +41,50 @@ cd backendservice_secondhop
 cp newrelic.js.template newrelic.js
 edit the file and add the same 'ingest license' key found in the New Relic UI in the previous step.
 ```
-# Run it
-This is how to start the services.
+# Run Services
+
+## Manual Start
+To start services manually:
 
 ```sh
 cd backendservice_firsthop
 node server.js
 ```
 
-```sh
+```sh 
 cd backendservice_secondhop
 node server.js
 ```
+
+## PM2 Ecosystem Management
+
+### Install PM2
+```sh
+npm install -g pm2
+```
+
+
+### Start Services with PM2
+```sh
+# Start firsthop in development mode
+cd backendservice_firsthop
+pm2 start ecosystem.config.js --env dev
+
+# Start secondhop in development mode
+cd backendservice_secondhop
+pm2 start ecosystem.config.js --env dev
+
+# View running processes
+pm2 list
+
+# Stop all processes
+pm2 stop all
+
+# Restart all processes
+pm2 restart all
+```
+
+## Logging
+Logs are stored in the `logs/` directory:
+- `app.log`: Standard output logs
+- `error.log`: Error logs
